@@ -15,6 +15,7 @@ BUG
 
 //NOTE: Client should send only if still connected - server should do all calculations
 /**TODO:
+ * 0) Refactor this into a more functional version for both server and client
  * 1) Implement Great America Mining
  * 2) Implement TrumpCo TaCo Farm
  * 3) Make the other module (GAM, TC TC F, TM) hidden till unlocked - maybe with text that says "This to unlock <insertName>"

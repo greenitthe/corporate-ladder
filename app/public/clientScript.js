@@ -99,12 +99,28 @@ $(document).ready(function() {
       $("#ore").removeClass("lastColumn")
       $("#tacos").removeClass("hidden")
     }
+    //mine
+    if (!$("#amMineInc").hasClass("hidden") && !$("#ore").hasClass("hidden")) {
+      $("#amMineInc").addClass("hidden")
+      $("#ore").addClass("hidden")
+      $("#dollaBills").addClass("lastColumn")
+    } else if ($("#amMineInc").hasClass("hidden") && data.mine === true) {
+      $("#amMineInc").removeClass("hidden")
+      $("#dollaBills").removeClass("lastColumn")
+      $("#ore").removeClass("hidden")
+    }
     //REMOVE things if save reset
     if (data.autoMine == true && !$("#automateOreButton").hasClass("hidden")) {
       $("#automateOreButton").addClass("hidden")
     }
     if (data.autoMine == false && $("automateOreButton").hasClass("hidden")) {
       $("#automateOreButton").removeClass("hidden")
+    }
+    if (data.trumps < 25 && !$("#amMineInc").hasClass("hidden")) {
+      $("#amMineInc").addClass("hidden");
+    }
+    if (data.trumps >= 25 && $("#amMineInc").hasClass("hidden")) {
+      $("#amMineInc").removeClass("hidden");
     }
     if (!$("#amMineButtonHolder").hasClass("hidden")) {
       if (data.mine === false) {
